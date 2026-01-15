@@ -31,7 +31,7 @@ function Feed() {
             </div>
 
             <div className={styles.posts}>
-                {data?.posts.map(post => (
+                {data?.posts?.map(post => (
                     <PostCard key={post.id} post={post} />
                 ))}
             </div>
