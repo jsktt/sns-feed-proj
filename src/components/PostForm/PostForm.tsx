@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useCreatePost } from "../../api/hooks/useCreatePost";
+import { useCreatePost } from "../../hooks/useCreatePost";
 import styles from './PostForm.module.css'
 
 interface PostFormData {
