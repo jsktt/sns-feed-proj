@@ -2,6 +2,7 @@ import './App.css'
 import PostCard from './components/PostCard/PostCard'
 import PostForm from './components/PostForm/PostForm'
 import Feed from './pages/Feed/Feed'
+import { db } from './mocks/db'
 
 function App() {
 
@@ -16,6 +17,13 @@ function App() {
       <main className='main'>
         <Feed />
         <PostForm />
+        <div>
+          {db.posts.map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
+        </div>
+
+
 
 
       </main>

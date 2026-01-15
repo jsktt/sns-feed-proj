@@ -21,7 +21,7 @@ export function useLikePost() {
 
                 return {
                     ...old,
-                    pages: old.pags.map((page: any) => ({
+                    pages: old.pages.map((page: any) => ({
                         ...page,
                         posts: page.posts.map((post: Post) => {
                             if (post.id === postId) {
