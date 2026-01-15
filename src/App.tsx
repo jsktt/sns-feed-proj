@@ -1,4 +1,6 @@
 import './App.css'
+import PostCard from './components/PostCard/PostCard'
+import PostForm from './components/PostForm/PostForm'
 import Feed from './pages/Feed/Feed'
 
 function App() {
@@ -13,6 +15,9 @@ function App() {
 
       <main className='main'>
         <Feed />
+        <PostForm />
+
+
       </main>
     </div>
   )
