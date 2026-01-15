@@ -4,22 +4,22 @@ import styles from './PostForm.module.css'
 
 interface PostFormData {
     content: string;
+    image: string;
 }
 
 function PostForm() {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<PostFormData>();
     const createPostMutation = useCreatePost();
 
+    // action function
     const onSubmit = (data: PostFormData) => {
-        createPostMutation.mutate(
-            { content: data.content },
-            {
-                onSuccess: () => {
-                    reset();
-                }
+        createPostMutation.mutate(data, {
+            onSuccess: () => {
+                reset();
             }
-        );
+        });
     };
+
 
     return (
         <div className={styles.formContainer}>
@@ -27,18 +27,17 @@ function PostForm() {
                 <textarea
                     {...register('content', {
                         required: '내용을 입력하세요',
-                        minLength: {
-                            value: 1,
-                            message: '최소 1자 이상 입력하세요'
-                        },
-                        maxLength: {
-                            value: 500,
-                            message: '최대  500자 까지 입력 가능합니다'
-                        }
                     })}
                     placeholder="무슨 생각 중이니?"
                     className={styles.textarea}
                     rows={3}
+                />
+
+                <input
+                    {...register('image')}
+                    type="text"
+                    placeholder="이미지 URL (선택)"
+                    className={styles.imageInput}
                 />
 
                 {errors.content && (
