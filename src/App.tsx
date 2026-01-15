@@ -22,10 +22,6 @@ function App() {
             <PostCard key={post.id} post={post} />
           ))}
         </div>
-
-
-
-
       </main>
     </div>
   )
