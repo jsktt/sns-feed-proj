@@ -1,6 +1,6 @@
-import type { Post } from '../types';
+import type { PostsResponse } from '../types';
 
-export async function fetchPosts(page:number=1,limit:number=5){
+export async function fetchPosts(page:number=1,limit:number=5): Promise<PostsResponse>{
     const response=await fetch(`api/posts?page=${page}&limit=${limit}`);
 
     if(!response.ok){

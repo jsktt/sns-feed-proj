@@ -32,3 +32,8 @@ export interface CreateCommentInput {
     postId: number;
     content: string;
 }
+
+export interface PostsResponse {
+  posts: Post[];
+  totalCount: number;
+}
