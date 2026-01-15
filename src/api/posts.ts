@@ -1,7 +1,9 @@
-export async function fetchPosts(page: number = 1, limit: number = 5) {
-    const response = await fetch(`api/posts?page=${page}&limit=${limit}`);
+import type { PostsResponse } from '../types';
 
-    if (!response.ok) {
+export async function fetchPosts(page:number=1,limit:number=5): Promise<PostsResponse>{
+    const response=await fetch(`api/posts?page=${page}&limit=${limit}`);
+
+    if(!response.ok){
         throw new Error('Faild to fetch posts');
     }
 
